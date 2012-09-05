@@ -50,7 +50,7 @@ sub got_request {
     my %params = %{$input->[0]};
 
     if (my $config = delete $params{default_config}) {
-	$heap->{default_config} = $config;
+        $heap->{default_config} = $config;
     }
     
     if ($params{ping}) {
@@ -61,7 +61,7 @@ sub got_request {
     $tcp_server_id = $session->ID;
 
     if ( ref $heap->{default_config} eq 'HASH' ) {
-	%params = (%{ $heap->{default_config} }, %params);
+        %params = (%{ $heap->{default_config} }, %params);
     }
 
     $params{omit_msg}  = 2 unless defined $params{omit_msg};
